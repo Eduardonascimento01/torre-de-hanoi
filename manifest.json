@@ -1,0 +1,17 @@
+{
+  "name": "Minha Torre de Hanói",
+  "short_name": "Hanói",
+  "description": "Um jogo clássico de lógica e matemática.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#3498db",
+  "icons": [
+    {
+      "src": "icone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

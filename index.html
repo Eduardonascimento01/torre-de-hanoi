@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Minha Torre de Hanói</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3498db">
+
+</head>
+<body>
+    <h1><strong>Torre de Hanói</strong></h1>
+    
+    <div id="configuracoes">
+    <label>Discos: <input type="number" id="numDiscos" value="3" min="3" max="10"></label>
+    <label><input type="checkbox" id="usarCronometro"> Cronômetro</label>
+    <button onclick="reiniciarJogo()">Novo Jogo</button>
+</div>
+
+<div id="estatisticas" style="margin: 10px; font-weight: bold;">
+    Movimentos: <span id="contador-movimentos">0</span> | 
+    Objetivo Mínimo: <span id="objetivo-minimo">7</span>
+</div>
+
+<div id="display-tempo" style="display: none; margin: 10px;">
+    Tempo: <span id="segundos">0</span>s
+</div>
+    
+    <div id="tabuleiro">
+        <div class="pino" id="pinoA" onclick="clicarPino('A')"></div>
+        <div class="pino" id="pinoB" onclick="clicarPino('B')"></div>
+        <div class="pino" id="pinoC" onclick="clicarPino('C')"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+            .then(() => console.log("Trabalhador de fundo registrado com sucesso!"))
+            .catch((erro) => console.log("Erro ao registrar o trabalhador:", erro));
+        }
+    </script>
+</body>
+</html>
